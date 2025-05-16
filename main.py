@@ -1,6 +1,6 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.responses import HTMLResponse
-from typing import List
+
 
 app = FastAPI(title="Calculator API")
 
@@ -60,12 +60,12 @@ def home():
     """
 
 @app.get("/add", response_class=HTMLResponse, tags=["Addition"])
-def add(num1: float, num2: float):
+async def add(num1: float, num2: float):
     result = num1 + num2
     return f"<h1>Addition Result: {result}</h1>"
 
 @app.get("/subtract", response_class=HTMLResponse, tags=["Subtraction"])
-def subtract(num1: float, num2: float):
+async def subtract(num1: float, num2: float):
     result = num1 - num2
     return f"<h1>Subtraction Result: {result}</h1>"
 
@@ -104,4 +104,3 @@ async def average(numbers: str = Query(...)):
     number_list = [float(x.strip()) for x in numbers.split(',')]
     result = sum(number_list) / len(number_list)
     return f"<h1>Average Result: {result}</h1>"
-
