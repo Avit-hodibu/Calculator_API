@@ -11,18 +11,17 @@ A simple web-based calculator built using FastAPI. It supports basic operations 
 
 ## Project Structure
 
-calculator\app/
-├── app/
-│   ├── main.py
-│   └── routes/
-│       ├── __init__.py
-│       ├── frontend.py
-│       └── operations.py
-├── tests/
-│   └── test_operations.py
+calculator\
+├── main.py
+├── main_tests/
+  
 
 
 ## Run Locally
+
+### Github
+```git clone https://github.com/Avit-hodibu/Calculator_API```
+
 
 ### Using Python
 In terminal:
